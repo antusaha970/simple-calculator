@@ -4,8 +4,13 @@ let buttons = document.querySelectorAll('.button');
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click', function (event) {
         if (event.target.innerText == "=") {
-            inputStr = eval(mainExpression);
-            mainExpression = eval(mainExpression);
+            if (mainExpression == "") {
+                alert("Please enter number and operator");
+            }
+            else {
+                inputStr = eval(mainExpression);
+                mainExpression = eval(mainExpression);
+            }
         }
         else if (event.target.innerText == "AC") {
             inputStr = "";
